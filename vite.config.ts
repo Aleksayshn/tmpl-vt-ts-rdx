@@ -26,7 +26,7 @@ export default defineConfig(({ mode }) => {
 
     // Build options
     build: {
-      outDir: "build", // Change if you want a different folder for build outputs
+      outDir: "dist", // Change if you want a different folder for build outputs
       sourcemap: true, // Generate source maps for debugging
       // Additional Rollup options can be specified here
       rollupOptions: {

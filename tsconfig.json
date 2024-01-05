@@ -13,7 +13,7 @@
 
     /* Module Resolution Options */
     "moduleResolution": "node", // Resolve modules using Node.js style
-    "baseUrl": "./", // Base directory to resolve non-relative module names
+    "baseUrl": "./", 
     "paths": {
       // List of paths to be used for module resolution
       "@/*": ["src/*"]
