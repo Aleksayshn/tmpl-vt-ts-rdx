@@ -14,7 +14,7 @@ export default defineConfig(({ mode }) => {
       react(), // React plugin to support JSX and React-specific optimizations
       tsconfigPaths(), // Plugin to automatically resolve paths based on tsconfig.json
     ],
-
+    base: "/tmpl-vt-ts-rdx/",
     // Resolve options for module paths
     resolve: {
       alias: {
