@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "esnext", // Specify ECMAScript target version
+    "module": "esnext", // Specify module code generation
+    "lib": ["dom", "dom.iterable", "esnext"], // Specify library files to be included in the compilation
+    "jsx": "react-jsx", // Specify JSX code generation: 'preserve', 'react-native', or 'react-jsx'
+    "sourceMap": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true, // Enable all strict type-checking options
+
+    /* Module Resolution Options */
+    "moduleResolution": "node", // Resolve modules using Node.js style
+    "baseUrl": ".", // Base directory to resolve non-relative module names
+    "paths": {
+      // List of paths to be used for module resolution
+      "@/*": ["src/*"]
+    },
+    "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+
+    "skipLibCheck": true, // Skip type checking of all declaration files (*.d.ts)
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
+    "noEmit": true, // Vite handles the module bundling and we don't need TypeScript to output files
+    "isolatedModules": true, // Generates corresponding '.tsbuildinfo' file for incremental compilation
+    "resolveJsonModule": true, // Resolves './foo.json' to 'foo.json'
+    "types": ["vite/client"] // Specify a list of custom TypeScript compiler options
+  },
+  "include": [
+    "src/**/*" // Files to be included in the program
+  ],
+  "exclude": [
+    "node_modules", // Exclude the node_modules directory from the program
+    "vite.config.ts", // Exclude Vite configuration file
+    "dist" // Exclude the build output directory
+    // "*.test.ts",
+    // "*.test.tsx"
+  ],
+
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
