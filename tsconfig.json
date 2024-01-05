@@ -5,6 +5,7 @@
     "module": "esnext", // Specify module code generation
     "lib": ["dom", "dom.iterable", "esnext"], // Specify library files to be included in the compilation
     "jsx": "react-jsx", // Specify JSX code generation: 'preserve', 'react-native', or 'react-jsx'
+    "allowJs": true, // Allow javascript files to be compiled
     "sourceMap": true,
 
     /* Strict Type-Checking Options */
