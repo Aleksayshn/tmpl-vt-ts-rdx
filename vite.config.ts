@@ -39,7 +39,6 @@ export default defineConfig(({ mode }) => {
       port: 3000, // Set your preferred port
       open: true, // Automatically open the app in the browser
       proxy: {
-        // Proxy settings if you need to proxy API requests
         // '/api': 'http://localhost:4000',
       },
     },
@@ -49,12 +48,24 @@ export default defineConfig(({ mode }) => {
     //   __APP_ENV__: JSON.stringify(env.APP_ENV),
     // },
 
-    // Dependency optimization options
-    optimizeDeps: {
-      include: [
-        // Specify dependencies to pre-bundle here
-      ],
+    test: {
+      include: ["src/tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+      exclude: ["node_modules", "dist", "vite.config.ts", "src/tests/setup.ts"],
+      testTimeout: 20000,
+      watch: false,
+      passWithNoTests: true,
+      globals: true,
+      environment: "jsdom",
+      // Setup files
+      setupFiles: "./src/tests/setup.ts",
     },
+
+    // Dependency optimization options
+    // optimizeDeps: {
+    //   include: [
+    //     // Specify dependencies to pre-bundle here
+    //   ],
+    // },
 
     // Options for static analysis and code transformation
     esbuild: {

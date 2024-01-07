@@ -5,18 +5,31 @@
     "module": "esnext", // Specify module code generation
     "lib": ["dom", "dom.iterable", "esnext"], // Specify library files to be included in the compilation
     "jsx": "react-jsx", // Specify JSX code generation: 'preserve', 'react-native', or 'react-jsx'
-    "allowJs": true, // Allow javascript files to be compiled
+    "allowJs": false, // Allow javascript files to be compiled
     "sourceMap": true,
-
-    /* Strict Type-Checking Options */
+    "types": ["vitest/globals", "vite/client"],
+    "noImplicitAny": false,
     "strict": true, // Enable all strict type-checking options
 
     /* Module Resolution Options */
     "moduleResolution": "node", // Resolve modules using Node.js style
-    "baseUrl": "./", 
+    "baseUrl": "./",
     "paths": {
       // List of paths to be used for module resolution
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@test/*": ["src/tests/*"]
+      // "@types/*": ["src/types/*"],
+      // "@app/*": ["src/app/*"],
+      // "@ui/*": ["src/ui/*"],
+      // "@utils/*": ["src/utils/*"],
+      // "@hooks/*": ["src/hooks/*"],
+      // "@components/*": ["src/components/*"],
+      // "@services/*": ["src/services/*"],
+      // "@store/*": ["src/store/*"],
+      // "@api/*": ["src/api/*"],
+      // "@lib/*": ["src/lib/*"],
+      // "@assets/*": ["src/assets/*"],
+      // "pages/*": ["src/pages/*"],
     },
     "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules
     "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
@@ -25,18 +38,19 @@
     "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
     "noEmit": true, // Vite handles the module bundling and we don't need TypeScript to output files
     "isolatedModules": true, // Generates corresponding '.tsbuildinfo' file for incremental compilation
-    "resolveJsonModule": true, // Resolves './foo.json' to 'foo.json'
-    "types": ["vite/client"] // Specify a list of custom TypeScript compiler options
+    "resolveJsonModule": true // Resolves './foo.json' to 'foo.json'
   },
   "include": [
-    "src/**/*" // Files to be included in the program
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.test.tsx",
+    "src/**/*.spec.tsx",
+    "src/tests/setupts"
   ],
   "exclude": [
     "node_modules", // Exclude the node_modules directory from the program
     "vite.config.ts", // Exclude Vite configuration file
     "dist" // Exclude the build output directory
-    // "*.test.ts",
-    // "*.test.tsx"
   ],
 
   "references": [{ "path": "./tsconfig.node.json" }]
